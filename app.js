@@ -17,10 +17,11 @@ import bodyParser from "body-parser";
 // Error Handler
 import { notFound, errorHandler } from "./middlewares/errorHandler.js"
 
+dotenv.config()
+
 const app = express()
 const port = 8080
 
-dotenv.config()
 
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,

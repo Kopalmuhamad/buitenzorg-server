@@ -10,6 +10,6 @@ router.get("/products", getAllProduct)
 router.get("/product/:id", getDetailProduct)
 router.put("/product/:id", protectedMiddleware, adminMiddleware, updateProduct)
 router.delete("/product/:id", protectedMiddleware, adminMiddleware, deleteProduct)
-router.post("/product/file-upload", protectedMiddleware, adminMiddleware, upload.single('image'), fileUpload)
+router.post("/product/fileUpload", protectedMiddleware, adminMiddleware, upload.single('image'), fileUpload)
 
 export default router
