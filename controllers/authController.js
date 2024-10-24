@@ -11,7 +11,7 @@ const signToken = (id) => {
 const createResToken = (user, statusCode, res) => {
     const token = signToken(user._id)
 
-    const isDev = process.env.NODE_ENV === "development"
+    const isDev = process.env.NODE_ENV === "development" ? false : true
 
     const cookieOption = {
         expires: new Date(
@@ -24,6 +24,7 @@ const createResToken = (user, statusCode, res) => {
     res.cookie('jwt', token, cookieOption)
 
     user.password = undefined
+    console.log(process.env.JWT_SECRET)
 
     res.status(statusCode).json({
         data: user
