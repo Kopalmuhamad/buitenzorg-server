@@ -35,7 +35,7 @@ app.use(ExpressMongoSanitize())
 app.use(bodyParser.json());
 app.use(express.static("public"))
 app.use(cors({
-    origin: 'http://localhost:3000/',
+    origin: 'https://buitenzorg-client.vercel.app/',
     credentials: true,
 }));
 app.use(cookieParser())
