@@ -17,7 +17,7 @@ const productSchema = new mongoose.Schema({
         minLength: [3, "Description must be at least 3 characters"]
     },
     images: {
-        type: [String],
+        type: String,
         required: [true, "Images are required"]
     },
     category: {
