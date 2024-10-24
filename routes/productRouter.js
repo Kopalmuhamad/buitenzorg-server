@@ -1,7 +1,7 @@
 import express from "express"
 import { createProduct, deleteProduct, fileUpload, getAllProduct, getDetailProduct, updateProduct } from "../controllers/productController.js"
 import { adminMiddleware, protectedMiddleware } from "../middlewares/authMiddleware.js"
-import { upload } from "../utils/upload-file-handler.js"
+import { upload } from "../utils/uploadFileHandler.js"
 
 const router = express.Router()
 

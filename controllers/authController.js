@@ -24,7 +24,6 @@ const createResToken = (user, statusCode, res) => {
     res.cookie('jwt', token, cookieOption)
 
     user.password = undefined
-    console.log(process.env.JWT_SECRET)
 
     res.status(statusCode).json({
         data: user

@@ -5,6 +5,7 @@ import mongoose from "mongoose"
 import cookieParser from "cookie-parser"
 import helmet from "helmet"
 import ExpressMongoSanitize from "express-mongo-sanitize"
+import { v2 as cloudinary } from 'cloudinary';
 
 // Import Routes
 import authRouter from "./routes/authRouter.js"
@@ -20,6 +21,12 @@ const app = express()
 const port = 8080
 
 dotenv.config()
+
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+});
 
 app.use(express.json())
 app.use(helmet())
